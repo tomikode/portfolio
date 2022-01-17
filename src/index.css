@@ -1,13 +1,373 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto';
+    font-size: 1.2em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+nav h1 {
+    display: inline-block;
+    color: white;
+    font-weight: 100;
+    padding: 10px 20px;
+    margin: 0;
+}
+
+nav {
+    padding: 15px 0px;
+    background-color: rgb(44, 44, 44);
+    margin: 0;
+    margin-bottom: 20px;
+    border-bottom: 3px solid grey;
+}
+
+.bigScreen {
+    display: none;
+}
+
+ul li {
+    margin: auto;
+    border-top: 1px solid white;
+}
+
+ul li:hover {
+    background-color: white;
+}
+
+ul li:first-of-type {
+    border: none;
+}
+
+ul li:hover .link {
+    color: rgb(44, 44, 44);
+}
+
+.link {
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    width: 100vw;
+    padding: 20px 0;
+}
+
+ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+.dropdown {
+    text-align: center;
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    transition: visibility 0.5s, height 0.5s, opacity 0.5s;
+    overflow-x: hidden;
+}
+
+.droparrow {
+    position: absolute;
+    display: inline-block;
+    right: 0;
+    top: 0;
+    font-size: 1.5em;
+    padding: 25px 20px;
+    border: none;
+    background-color: transparent;
+    color: white;
+}
+
+.droparrow:hover {
+    cursor: pointer;
+    background-color: rgb(44, 44, 44);
+    color: white;
+}
+
+.show {
+    opacity: 1;
+    height: 60vh;
+    visibility: visible;
+}
+
+button,
+input[type="submit"] {
+    border: 2px solid grey;
+    background-color: rgb(44, 44, 44);
+    color: white;
+    padding: 10px 20px;
+    font-size: 1em;
+    display: inline-block;
+}
+
+button:hover,
+input[type="submit"]:hover {
+    background-color: white;
+    color: rgb(44, 44, 44);
+    cursor: pointer;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: auto;
+}
+
+button:disabled:hover {
+    background-color: rgb(44, 44, 44);
+    color: white;
+}
+
+.header h1 {
+    display: inline;
+}
+
+.header {
+    padding-bottom: 20px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid rgb(44, 44, 44);
+}
+
+.header button {
+    float: right;
+}
+
+.addForm {
+    padding: 15px;
+    border: 2px solid rgb(44, 44, 44);
+}
+
+.longInput {
+    width: 100%;
+}
+
+.addForm input[type="date"],
+input[type="text"] {
+    box-sizing: border-box;
+    padding: 10px;
+    height: 40px;
+    width: 100%;
+    margin: 0;
+    font-size: 1em;
+}
+
+.addTable {
+    margin-bottom: 15px;
+}
+
+.addTable td {
+    font-size: 1.1em;
+    padding: 3px;
+}
+
+.warn {
+    color: red;
+}
+
+.task {
+    padding: 15px;
+    padding-top: 0;
+    border-bottom: 1px solid rgb(44, 44, 44);
+}
+
+.main {
+    margin: 0 20px;
+    padding-bottom: 4em;
+}
+
+.footercorrect {
+    position: relative;
+    min-height: 100vh;
+}
+
+footer {
+    text-align: center;
+    width: 100%;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    height: 3em;
+    color: white;
+    background-color: rgb(44, 44, 44);
+    border-top: 3px solid grey;
+}
+
+footer h3 {
+    font-weight: 100;
+    display: inline-block;
+    padding: 0;
+    margin: 15px 5px;
+}
+
+footer p {
+    display: inline-block;
+    font-size: 0.8em;
+    margin: 15px 5px;
+}
+
+.resSection {
+    display: flex;
+}
+
+.result {
+    text-align: center;
+    display: flex;
+    width: 80%;
+    border: 2px solid rgb(44, 44, 44);
+    height: 50px;
+    background-color: lightgrey;
+    align-items: center;
+    justify-content: center;
+}
+
+.copyPwd {
+    width: 20%;
+    padding: 0;
+}
+
+.pwgTable {
+    margin: 20px 0;
+    font-size: 1.1em;
+    padding: 3px;
+}
+
+.pwgTable input[type="number"] {
+    height: 40px;
+    width: 100%;
+    font-size: 1em;
+}
+
+.pwgTable input[type="checkbox"] {
+    height: 30px;
+    width: 30px;
+}
+
+.center {
+    text-align: center;
+}
+
+.centreLargeBtn {
+    width: 70%;
+    height: 70px;
+    font-size: 1em;
+}
+
+.green {
+    color: rgb(0, 255, 0);
+}
+
+pre {
+    white-space: pre-wrap;
+}
+
+.pwcInput {
+    box-sizing: border-box;
+    padding: 10px;
+    height: 40px;
+    min-width: 100%;
+    margin: 0;
+    font-size: 1em;
+}
+
+.grid {
+    margin: 20px auto;
+}
+
+.grid td {
+    width: 17vh;
+    height: 17vh;
+    border: 3px solid rgb(44, 44, 44);
+    font-size: 5em;
+}
+
+.ticButs button {
+    margin: 0 10px;
+}
+
+.nasaPic img {
+    height: auto;
+    width: 100%;
+    border: 3px solid grey;
+}
+
+.tetrisTable {
+    margin: auto;
+}
+
+.tetrisTable td {
+    border: 1px solid rgb(44, 44, 44);
+    height: 20px;
+    width: 20px;
+}
+
+.taken {
+    background-color: grey;
+}
+
+.tetriscol {
+    display: inline-block;
+    position: relative;
+    width: 33.33%;
+    vertical-align: top;
+}
+
+@media only screen and (min-width: 769px){
+    
+    .bigScreenMain {
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    body {
+        font-size: 1em;
+    }
+
+    .dropdown {
+        display: inline-block;
+        opacity: 1;
+        height: 100%;
+        visibility: visible;
+    }
+
+    ul li:first-of-type {
+        border: none;
+        pointer-events: none;
+    }
+
+    nav {
+        padding: 0;
+    }
+
+    ul li {
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        border-left: 1px solid white;
+    }
+
+    ul {
+        display: flex;
+        margin: 10px 0;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    .vertCenter {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+    }
+
+    .link {
+        width: 10vw;
+        
+    }
+
+    .bigScreen {
+        display: initial;
+    }
+
 }
