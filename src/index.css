@@ -4,6 +4,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: rgb(25, 31, 25);
+  overflow-x: hidden;
 }
 
 code {
@@ -12,17 +13,21 @@ code {
 }
 
 .app {
-  padding: 10px;
-  max-width: 1200px;
   margin: auto;
 }
 
+.test {
+  position: relative;
+  width: 100%;
+}
+
 .icon {
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
   color: rgb(250, 250, 250);
   margin-left: auto;
   margin-right: 0;
+  padding: 15px;
 }
 
 .icon:hover {
@@ -30,15 +35,82 @@ code {
   cursor: pointer;
 }
 
-.navbar {
-  display: flex;
-  padding: 5px;
-}
-
 .logo {
   margin: 0;
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
+  user-select: none;
+  padding: 15px;
+}
+
+.logo:hover {
+  cursor: pointer;
+}
+
+.navbarFlex {
+  display: flex;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.navbar {
+  position: fixed;
+  top: 70px;
+  width: 100%;
+  left: 50%;
+  top: 0%;
+  width: 100%;
+  transform: translateX(-50%);
+  border-bottom: 1px solid rgb(201, 201, 201);
+  background-color: rgb(25, 31, 25);
+}
+
+.menu {
+  color: white;
+  position: absolute;
+  width: 300px;
+  height: 100vh;
+  top: 70px;
+  right: 0px;
+  padding: 15px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(25, 31, 25));
+  z-index: 1;
+  font-size: large;
+}
+
+.menu ul {
+  list-style: none;
+  text-align: right;
+}
+
+.menu ul li {
+  user-select: none;
+  cursor: pointer;
+  margin: 10px;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.showMenu {
+
+}
+
+.disableScroll {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.linkedIcon {
+  width: 24px;
+  height: 24px;
+  margin-left: 10px;
+
+}
+
+.space {
+  height: 4000px;
+  background-color: blue;
 }
 
 
