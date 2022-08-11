@@ -1,10 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Linkedin from "./Linkedin";
 import Github from "./Github";
 import { ChatAlt2Icon, HomeIcon } from "@heroicons/react/solid";
 import { Link } from "react-router-dom";
 
-const DesktopMenu = () => {
+const DesktopMenu = ({ location }) => {
+	const determineClasses = (link) => {
+		return link === location.pathname;
+	};
+
+	useEffect(() => {
+		const home = document.getElementsByClassName("homeLink")[1];
+		const contact = document.getElementsByClassName("contactLink")[1];
+		if (determineClasses("/")) {
+			home.classList.add("currentLink");
+			contact.classList.remove("currentLink");
+		} else {
+			home.classList.remove("currentLink");
+			contact.classList.add("currentLink");
+		}
+	}, [location]);
+
 	return (
 		<div className="desktopMenu" id="desktopMenu">
 			<ul>

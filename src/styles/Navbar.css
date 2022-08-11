@@ -17,6 +17,7 @@
   }
   
   .navbar {
+    z-index: 1;
     position: fixed;
     width: 100.1%;
     left: 50%;
@@ -94,6 +95,14 @@
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
+  }
+
+  .currentLink {
+    color: rgb(150, 150, 150);
+  }
+
+  .currentLink .linkedIcon path {
+    fill: rgb(150, 150, 150);
   }
   
   .mobileLink:hover {
@@ -175,6 +184,14 @@
       align-items: center;
       transition: color 0.5s ease;
     }
+
+    .currentLink {
+      color: rgb(150, 150, 150);
+    }
+
+    .currentLink .linkedIcon path {
+      fill: rgb(150, 150, 150);
+    }
   
     .desktopLink:hover {
       color: rgb(0, 200, 200);
@@ -183,6 +200,7 @@
     .desktopLink:hover .linkedIcon path{
       fill: rgb(0, 200, 200);
     }
+
   
     .mobileMenu {
       display: none;

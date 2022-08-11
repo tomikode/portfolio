@@ -1,24 +1,17 @@
 import Navbar from "./components/Navbar";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import Home from "./components/Home";
+import Contact from "./components/Contact";
 
 function App() {
 
-  
 
 	return (
 		<Router>
 			<div className="app">
 				<Navbar />
-				<Routes>
-					<Route
-						path="/contact"
-						element={<><div className="other hide" /><div className="space" /></>}
-					/>
-					<Route
-						path="/"
-						element={<><div className="other" /><div className="space hide" /></>}
-					/>
-				</Routes>
+				<Home />
+				<Contact />
 			</div>
 		</Router>
 	);

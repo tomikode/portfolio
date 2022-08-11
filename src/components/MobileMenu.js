@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Linkedin from "./Linkedin";
 import Github from "./Github";
+import { Link } from "react-router-dom";
 import {
 	ChatAlt2Icon,
 	HomeIcon,
@@ -8,7 +9,23 @@ import {
 	MenuIcon,
 } from "@heroicons/react/solid";
 
-const MobileMenu = () => {
+const MobileMenu = ({ location }) => {
+	const determineClasses = (link) => {
+		return link === location.pathname;
+	};
+
+	useEffect(() => {
+		const home = document.getElementsByClassName("homeLink")[0];
+		const contact = document.getElementsByClassName("contactLink")[0];
+		if (determineClasses("/")) {
+			home.classList.add("currentLink");
+			contact.classList.remove("currentLink");
+		} else {
+			home.classList.remove("currentLink");
+			contact.classList.add("currentLink");
+		}
+	}, [location]);
+
 	const showMenu = () => {
 		const menu = document.getElementById("mobileMenu");
 		menu.classList.add("showMobileMenu");
@@ -37,14 +54,14 @@ const MobileMenu = () => {
 			<XIcon onClick={hideMenu} className="icon xIcon" id="xIcon" />
 			<div className="mobileMenu" id="mobileMenu">
 				<ul>
-					<a className="mobileLink homeLink">
+					<Link to="/" className="mobileLink homeLink">
 						<HomeIcon className="linkedIcon" />
 						Home
-					</a>
-					<a className="mobileLink contactLink">
+					</Link>
+					<Link to="/contact" className="mobileLink contactLink">
 						<ChatAlt2Icon className="linkedIcon" />
 						Contact
-					</a>
+					</Link>
 					<a
 						className="mobileLink linkedInLink"
 						href="https://www.linkedin.com/in/tomipiisila/"
