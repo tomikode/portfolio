@@ -1,6 +1,10 @@
 import React from "react";
+import '../styles/Arrow.css'
 
 const Arrow = () => {
+
+
+
 	return (
 		<svg
             id="arrow"

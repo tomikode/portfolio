@@ -5,7 +5,6 @@ import Contact from "./components/Contact";
 
 function App() {
 
-
 	return (
 		<Router>
 			<div className="app">
