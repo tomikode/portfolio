@@ -1,0 +1,29 @@
+.landing {
+    height: 100vh;
+    background-color: rgb(25, 31, 25);
+    display: flex;
+    flex-grow: 1;
+    justify-items: center;
+    align-items: center;
+}
+
+.centre {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.centreText {
+    color: white;
+    margin-bottom: 20px;
+    font-size: small;
+}
+
+
+#arrow {
+    width: 200px;
+    fill: white;
+    
+}
+
