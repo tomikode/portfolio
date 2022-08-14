@@ -54,14 +54,18 @@ const MobileMenu = ({ location }) => {
 			<XIcon onClick={hideMenu} className="icon xIcon" id="xIcon" />
 			<div className="mobileMenu" id="mobileMenu">
 				<ul>
-					<Link to="/" className="mobileLink homeLink">
-						<HomeIcon className="linkedIcon" />
-						Home
-					</Link>
-					<Link to="/contact" className="mobileLink contactLink">
-						<ChatAlt2Icon className="linkedIcon" />
-						Contact
-					</Link>
+					<div onClick={hideMenu}>
+						<Link to="/" className="mobileLink homeLink">
+							<HomeIcon className="linkedIcon" />
+							Home
+						</Link>
+					</div>
+					<div onClick={hideMenu}>
+						<Link to="/contact" className="mobileLink contactLink">
+							<ChatAlt2Icon className="linkedIcon" />
+							Contact
+						</Link>
+					</div>
 					<a
 						className="mobileLink linkedInLink"
 						href="https://www.linkedin.com/in/tomipiisila/"

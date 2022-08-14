@@ -1,16 +1,20 @@
-.landing {
-    height: 100vh;
+
+.centreContainer {
     background-color: rgb(25, 31, 25);
+    height: 100vh;
     display: flex;
     flex-grow: 1;
     justify-items: center;
     align-items: center;
 }
 
+.typedContainer {
+    border-top: 1px solid white;
+    height: 110vh;
+}
+
 .centre {
     margin: auto;
-    display: flex;
-    flex-direction: column;
     text-align: center;
 }
 
@@ -24,6 +28,47 @@
 #arrow {
     width: 200px;
     fill: white;
-    
 }
+
+.name {
+    font-size: 80px;
+    line-height: 20px;
+    margin: 0 auto;
+    color: white;
+    user-select: none;
+}
+
+.typingLetters {
+    display: flex;
+    color: rgb(0, 200, 200);
+    align-items: center;
+    white-space: pre;
+    justify-content: center;
+}
+
+.cursor {
+    background-color:rgb(0, 200, 200);
+    height: 110px;
+    width: 5px;
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.breathing {
+    animation: cursorFade 1s ease infinite;
+}
+
+@keyframes cursorFade {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
 

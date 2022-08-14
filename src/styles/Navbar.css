@@ -98,11 +98,11 @@
   }
 
   .currentLink {
-    color: rgb(150, 150, 150);
+    color: rgb(120, 120, 120);
   }
 
   .currentLink .linkedIcon path {
-    fill: rgb(150, 150, 150);
+    fill: rgb(120, 120, 120);
   }
   
   .mobileLink:hover {
@@ -201,11 +201,11 @@
     }
 
     .currentLink {
-      color: rgb(150, 150, 150);
+      color: rgb(120, 120, 120);
     }
 
     .currentLink .linkedIcon path {
-      fill: rgb(150, 150, 150);
+      fill: rgb(120, 120, 120);
     }
   
     .desktopLink:hover {
