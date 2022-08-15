@@ -3,14 +3,16 @@
     background-color: rgb(25, 31, 25);
     height: 100vh;
     display: flex;
-    flex-grow: 1;
-    justify-items: center;
-    align-items: center;
 }
 
 .typedContainer {
+    background-color: rgb(25, 31, 25);
     border-top: 1px solid white;
     height: 110vh;
+    width: 100%;
+    display: inline-block;
+    position: relative;
+    /* justify-items: start; */
 }
 
 .centre {
@@ -18,7 +20,7 @@
     text-align: center;
 }
 
-.centreText {
+.centreArrowText {
     color: white;
     margin-bottom: 30px;
     font-size: small;
@@ -30,27 +32,46 @@
     fill: white;
 }
 
-.name {
-    font-size: 80px;
-    line-height: 20px;
-    margin: 0 auto;
+.centreTyping {
+    font-size: 50px;
+    line-height: 70px;
     color: white;
+    margin: 0 15px;
     user-select: none;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.centreTyping p {
+    margin: 0;
 }
 
 .typingLetters {
     display: flex;
     color: rgb(0, 200, 200);
     align-items: center;
-    white-space: pre;
-    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 100vw;
+    margin: 10px 0;
 }
+
+.typingLetters p {
+    margin: 0;
+    margin-right: 40px;
+}
+
+.typingLetters p:last-of-type {
+    margin: 0;
+}
+
 
 .cursor {
     background-color:rgb(0, 200, 200);
-    height: 110px;
+    height: 70px;
     width: 5px;
-    display: inline-block;
+    display: inline;
     margin: 0 5px;
 }
 
@@ -68,6 +89,28 @@
     100% {
         opacity: 1;
     }
+}
+
+@media only screen and (min-width: 992px){
+
+    .typedContainer {
+        display: flex;
+    }
+
+    .centreTyping{
+        text-align: center;
+        width: 500px;
+        position: relative;
+        -ms-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    .typingLetters {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
 }
 
 
