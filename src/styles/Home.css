@@ -10,9 +10,7 @@
     border-top: 1px solid white;
     height: 110vh;
     width: 100%;
-    display: inline-block;
     position: relative;
-    /* justify-items: start; */
 }
 
 .centre {
@@ -32,16 +30,20 @@
     fill: white;
 }
 
+.typingBoxContainer {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    height: 100%;
+}
+
 .centreTyping {
+    display: inline-block;
     font-size: 50px;
     line-height: 70px;
     color: white;
     margin: 0 15px;
     user-select: none;
-    position: absolute;
-    top: 50%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
 }
 
 .centreTyping p {
@@ -59,7 +61,7 @@
 
 .typingLetters p {
     margin: 0;
-    margin-right: 40px;
+    margin-right: 30px;
 }
 
 .typingLetters p:last-of-type {
@@ -93,23 +95,20 @@
 
 @media only screen and (min-width: 992px){
 
-    .typedContainer {
-        display: flex;
+    .typingBoxContainer {
+        justify-items: center;
     }
 
     .centreTyping{
-        text-align: center;
-        width: 500px;
-        position: relative;
-        -ms-transform: translateY(0);
-        transform: translateY(0);
+        width: 550px;
+        margin: auto;
     }
 
-    .typingLetters {
+    /* .typingLetters {
         display: flex;
         justify-content: center;
         align-items: center;
-    }
+    } */
 
 }
 

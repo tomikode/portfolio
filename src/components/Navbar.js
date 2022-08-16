@@ -2,13 +2,10 @@ import React, { useEffect } from "react";
 import MobileMenu from "./MobileMenu";
 import DesktopMenu from "./DesktopMenu";
 import '../styles/Navbar.css';
-import { useLocation } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({ location }) => {
 
-	const location = useLocation();
-
-	const onScroll = (e) => {
+	const onScroll = () => {
 		const height = document.documentElement.scrollHeight
 		const current = window.scrollY
 		const windowHeight = window.innerHeight
@@ -25,13 +22,10 @@ const Navbar = () => {
 		}
 	}, [])
 
-	const resetScroll = () => {
-		window.scrollTo(0, 0)
-	}
-
 	useEffect(() => {
-		resetScroll()
-	}, [location])
+		console.log(location)
+		window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+	}, [location.key])
 
 	return (
 		<div className="navbar">

@@ -6,7 +6,6 @@ body, html {
   background-color: rgb(25, 31, 25);
   overflow-x: hidden;
   padding: 0;
-  scroll-behavior: smooth;
 }
 
 code {
@@ -34,6 +33,7 @@ code {
 .maxWidthContainer {
   margin: auto;
   max-width: 1200px;
+  height: 100%;
 }
 
 .home {

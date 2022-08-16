@@ -21,6 +21,10 @@ const DesktopMenu = ({ location }) => {
 		}
 	}, [location]);
 
+	const resetScroll = () => {
+		window.scrollTo(0, 0);
+	};
+
 	return (
 		<div className="desktopMenu" id="desktopMenu">
 			<ul>

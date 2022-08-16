@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { useLocation } from "react-router-dom";
 
 const Typing = () => {
 	const toType = ["tomi piisila", "a web developer", "a uni student"];
@@ -10,10 +11,6 @@ const Typing = () => {
 	useEffect(() => {
 		typeCycle();
 	}, []);
-
-	const renderTyped = () => {
-		return typed + "|";
-	};
 
 	const typeCycle = () => {
 		if (typedPos.current < toType[phrasePos.current].length) {
@@ -57,17 +54,20 @@ const Typing = () => {
 	return (
 		<div className="typedContainer">
 			<div className="maxWidthContainer">
-				<div className="centreTyping">
-					<p>i am</p>
-					<div className="typingLetters">
-						{typed.split(" ").map((letter, index) => {
-							return (
-								<p className="typingWord" key={index}>
-									{letter}
-								</p>
-							);
-						})}
-						<div className="cursor" id="cursor" />
+				<div className="typingBoxContainer">
+					<div className="centreTyping">
+						<p>{">"} whoami</p>
+						<div className="typingLetters">
+							<p className="typingWord">{">"}</p>
+							{typed.split(" ").map((letter, index) => {
+								return (
+									<p className="typingWord" key={index}>
+										{letter}
+									</p>
+								);
+							})}
+							<div className="cursor" id="cursor" />
+						</div>
 					</div>
 				</div>
 			</div>

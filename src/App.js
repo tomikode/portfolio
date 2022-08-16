@@ -1,18 +1,18 @@
 import Navbar from "./components/Navbar";
-import { BrowserRouter as Router } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import Home from "./components/Home";
 import Contact from "./components/Contact";
 
 function App() {
 
+	const location = useLocation();
+
 	return (
-		<Router>
-			<div className="app">
-				<Navbar />
-				<Home />
-				<Contact />
-			</div>
-		</Router>
+		<div className="app">
+			<Navbar location={location} />
+			<Home location={location} />
+			<Contact location={location} />
+		</div>
 	);
 }
 
