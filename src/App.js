@@ -7,6 +7,7 @@ function App() {
 
 	const location = useLocation();
 
+
 	return (
 		<div className="app">
 			<Navbar location={location} />
