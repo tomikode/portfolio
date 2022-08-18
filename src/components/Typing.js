@@ -18,7 +18,7 @@ const Typing = () => {
 			setTyped(toType[phrasePos.current].slice(0, typedPos.current));
 			setTimeout(() => {
 				typeCycle();
-			}, 100);
+			}, 50);
 		} else {
 			const cursor = document.getElementById("cursor");
 			cursor.classList.add("breathing");
@@ -35,7 +35,7 @@ const Typing = () => {
 			setTyped(toType[phrasePos.current].slice(0, typedPos.current));
 			setTimeout(() => {
 				backspaceCycle();
-			}, 100);
+			}, 50);
 		} else {
 			if (phrasePos.current === 2) {
 				phrasePos.current = 0;

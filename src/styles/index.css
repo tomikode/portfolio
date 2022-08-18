@@ -26,7 +26,7 @@ code {
   height: 5000px;
   opacity: 1;
   visibility: visible;
-  transition: visibility 1s ease, opacity 1s ease 1s;
+  transition: visibility 0.3s ease, opacity 0.3s ease 1.5s;
   scroll-behavior: smooth;
 }
 
@@ -46,12 +46,46 @@ code {
 }
 
 .hide {
-  transition: visibility 1s ease, opacity 1s ease;
+  transition: visibility 0.3s ease, opacity 0.3s ease;
   visibility: hidden;
   opacity: 0;
   z-index: -1;
 }
 
+.transferLogoScreen {
+  position: fixed;
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(25, 31, 25);
+  justify-content: center;
+  opacity: 0;
+  z-index: 0;
+  transition: opacity 0.5s ease;
+}
+
+.showScreen {
+  opacity: 1;
+}
+
+.hideScreen {
+  opacity: 0;
+}
+
+.transferLogo {
+  transform: translateY(-5vh);
+  transition: transform 0.5s ease;
+}
+
+.showLogo {
+  transform: translateY(0);
+}
+
+.hideLogo {
+  transform: translateY(5vh);
+}
 
 
 

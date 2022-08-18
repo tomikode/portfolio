@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import "../styles/Home.css";
 import Arrow from "./Arrow.js";
@@ -8,13 +9,18 @@ import Typing from "./Typing";
 // fix growing div size bug
 
 const Home = ({ location }) => {
-	const determineShow = () => {
-		if (location.pathname === "/") return "container home";
-		return "container home hide";
-	};
+
+	useEffect(() => {
+		const home = document.getElementById("home")
+		if (location.pathname === "/") {
+			home.classList = "container home"
+		} else {
+			home.classList = "container home hide"
+		}
+	}, [location.pathname])
 
 	return (
-		<div id="home" className={determineShow()}>
+		<div id="home" className="container home hide">
 			<div className="centreContainer">
 				<div className="centre">
 					<div className="centreArrowText">Scroll down slowly</div>

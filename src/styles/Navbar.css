@@ -25,6 +25,7 @@
     transform: translateX(-50%);
     border-bottom: 1px solid rgb(200, 200, 200);
     background-color: rgb(25, 31, 25);
+    transition: visibility 0.3s ease, opacity 0.3s ease;
   }
   
   .icon {

@@ -46,6 +46,10 @@
     transition: transform 1s ease, opacity 1s ease;
 }
 
+.expEven {
+    transform: translateX(-20%);
+}
+
 .slideIn {
     opacity: 1;
     transform: translateX(0);
@@ -92,8 +96,20 @@
 }
 
 .profilePic {
-    width: 150px;
+    width: 40vw;
+    max-width: 120px;
+    height: auto;
+    margin: 15px;
+    padding: 25px 0;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
     filter: grayscale(100%);
+}
+
+@media only screen and (max-width: 450px){
+    .about .expDesc {
+        flex-direction: column;
+    }
 }
 
 @media only screen and (min-width: 992px){

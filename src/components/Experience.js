@@ -6,7 +6,7 @@ const Experience = () => {
 	const onScroll = () => {
 		const sections = document.getElementsByClassName("expSection")
 		const showHeight = window.innerHeight * 4 / 5
-		const hideHeight = window.innerHeight
+		const hideHeight = window.innerHeight * 8.5 / 10
 		for (const section of sections) {
 			const top = section.getBoundingClientRect().top
 			if (top < showHeight)
@@ -31,13 +31,13 @@ const Experience = () => {
 						<br />
 						My name is Tomi Piisila
 						<br />
-						I am 3rd year university student studying at UTS. 
+						I am 3rd year university student studying at UTS.  
 
 
 						<img className="profilePic" src="profile pic zoom.jpg" />
 						</div>
 					</div>
-					<div className="expSection languageExp">
+					<div className="expSection languageExp expEven">
 						<div className="expTitle">Experience</div>
 						<div className="expDesc">
 							<div>

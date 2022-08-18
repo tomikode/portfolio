@@ -24,11 +24,21 @@ const Navbar = ({ location }) => {
 
 
 	useEffect(() => {
-		window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })		
+		setTimeout(() => {
+			window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+		}, 300)		
 	}, [location.key])
 
+	useEffect(() => {
+		const navbar = document.getElementById("navbar")
+		navbar.classList.add("hide")
+		setTimeout(() => {
+			navbar.classList.remove("hide")
+		}, 1300)
+	}, [])
+
 	return (
-		<div className="navbar">
+		<div id="navbar" className="navbar hide">
 			<div id="progress" className="progress" />
 			<div className="navbarFlex">
 				<img src="tp.png" className="logo" />
