@@ -13,6 +13,8 @@ const Typing = () => {
 	}, []);
 
 	const typeCycle = () => {
+		const cursor = document.getElementById("cursor");
+		if (!cursor) return
 		if (typedPos.current < toType[phrasePos.current].length) {
 			typedPos.current++;
 			setTyped(toType[phrasePos.current].slice(0, typedPos.current));
@@ -20,7 +22,6 @@ const Typing = () => {
 				typeCycle();
 			}, 50);
 		} else {
-			const cursor = document.getElementById("cursor");
 			cursor.classList.add("breathing");
 			setTimeout(() => {
 				cursor.classList.remove("breathing");
@@ -30,6 +31,8 @@ const Typing = () => {
 	};
 
 	const backspaceCycle = () => {
+		const cursor = document.getElementById("cursor");
+		if (!cursor) return
 		if (typedPos.current > 0) {
 			typedPos.current--;
 			setTyped(toType[phrasePos.current].slice(0, typedPos.current));
@@ -42,7 +45,6 @@ const Typing = () => {
 			} else {
 				phrasePos.current++;
 			}
-			const cursor = document.getElementById("cursor");
 			cursor.classList.add("breathing");
 			setTimeout(() => {
 				cursor.classList.remove("breathing");

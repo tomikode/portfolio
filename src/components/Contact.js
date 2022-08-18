@@ -3,10 +3,12 @@ import React, { useEffect } from "react";
 const Contact = ({ location }) => {
 
 	useEffect(() => {
-		console.log('stuff')
 		const contact = document.getElementById("contact")
 		if (location.pathname === "/contact") {
-			contact.classList = "container contact"
+			contact.classList = "container contact hide"
+			setTimeout(() => {
+				contact.classList = "container contact"
+			}, 300)
 		} else {
 			contact.classList = "container contact hide"
 		}

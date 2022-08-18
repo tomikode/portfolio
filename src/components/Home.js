@@ -13,7 +13,10 @@ const Home = ({ location }) => {
 	useEffect(() => {
 		const home = document.getElementById("home")
 		if (location.pathname === "/") {
-			home.classList = "container home"
+			home.classList = "container home hide"
+			setTimeout(() => {
+				home.classList = "container home"
+			}, 300)
 		} else {
 			home.classList = "container home hide"
 		}
