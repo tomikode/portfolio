@@ -22,12 +22,35 @@
     background-color: rgb(0, 200, 200);
     border: 1px solid yellow;
     height: initial;
+
+}
+
+#lineContainer {
+    display: flex;
+    height: 100%;
+}
+
+#lineLeft {
+    height: 0px;
+    width: 5px;
+    margin: 30px;
+    margin-right: 0;
+    background-color: rgb(25, 31, 25);
+}
+
+#lineRight {
+    height: 0px;
+    width: 5px;
+    margin: 30px;
+    margin-left: 0;
+    background-color: rgb(25, 31, 25);
 }
 
 .expFlexContainer {
     display: flex;
     flex-direction: column;
     height: 100%;
+    flex-grow: 1;
     /* padding: 50px 15px; */
 }
 

@@ -21,7 +21,6 @@ function App() {
 	}, [location.pathname])
 
 	const getPage = () => {
-		console.log(page)
 		switch (page) {
 			case '/contact':
 				return <Contact location={location} />
