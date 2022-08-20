@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import "../styles/Home.css";
 import Arrow from "./Arrow.js";
+import Canvas from "./Canvas";
 import Experience from "./Experience";
 import Typing from "./Typing";
 
@@ -21,21 +22,9 @@ const Home = ({ location }) => {
 		}
 	}, [location.pathname])
 
-	const canvasPlay = () => {
-		let c = document.getElementById("testCanvas");
-		let ctx = c.getContext("2d");
-		ctx.moveTo(0, 0);
-		ctx.lineTo(200, 100);
-		ctx.stroke();
-	}
-
-	useEffect(() => {
-		canvasPlay()
-	}, [])
-
 	return (
 		<div id="home" className="container home hide">
-			<canvas id="testCanvas" width="200" height="200"/>
+			<Canvas />
 			<div className="centreContainer">
 				<div className="centre">
 					<div className="centreArrowText">Scroll down slowly</div>

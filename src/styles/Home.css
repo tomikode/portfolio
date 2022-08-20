@@ -35,7 +35,7 @@
     width: 5px;
     margin: 30px;
     margin-right: 0;
-    background-color: rgb(25, 31, 25);
+    background-color: rgba(25, 31, 25, 0);
 }
 
 #lineRight {
