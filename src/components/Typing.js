@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "../styles/Typing.css";
+import Canvas from "./Canvas";
 
 const Typing = () => {
 	const toType = ["tomi piisila", "a web developer", "a uni student"];

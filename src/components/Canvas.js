@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useLayoutEffect, useRef } from "react";
 
 const Canvas = () => {
 	const canvasRef = useRef(null);
@@ -11,85 +11,111 @@ const Canvas = () => {
 
 	class Particle {
 		constructor() {
-            this.alive = new Date()
-            this.dead = new Date()
-            this.dead.setSeconds(this.dead.getSeconds() + 2)
 			this.x = Math.random() * canvasRef.current.width;
 			this.y = Math.random() * canvasRef.current.height;
-            this.opacity = (this.dead - this.alive) / 2
+			this.opacity = Math.random();
 			this.size = Math.random() * 5 + 1;
-			this.speedX = Math.random() * 2 - 1;
-			this.speedY = Math.random() * 2;
+			this.growth = Math.random() * 0.001 - 0.0005;
+			this.speedX = Math.random() * 0.3;
+			this.speedY = Math.random() * 0.1 - 0.05;
+		}
+
+		startLeft() {
+			this.x = -10;
+			this.y = Math.random() * canvasRef.current.height;
 		}
 
 		update() {
 			this.x += this.speedX;
 			this.y += this.speedY;
-            this.size *= 0.995
+			if (this.size + this.growth > 0) this.size += this.growth;
 		}
 
-        draw(){
-            this.alive = new Date()
-            this.opacity = (this.dead - this.alive) / 2000
-            ctxRef.current.globalAlpha = this.opacity
-            ctxRef.current.fillStyle = `rgb(25, 31, 25)`;
-            ctxRef.current.lineWidth = 3;
-            ctxRef.current.beginPath();
-            ctxRef.current.moveTo(0, 0)
-            ctxRef.current.lineTo(this.x, this.y)
-            // ctxRef.current.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-            ctxRef.current.stroke();
-        }
+		draw() {
+			ctxRef.current.globalAlpha = this.opacity;
+			ctxRef.current.fillStyle = `rgb(25, 31, 25)`;
+			ctxRef.current.beginPath();
+			ctxRef.current.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+			ctxRef.current.fill();
+		}
 
-        checkGone(){
-            if (this.x > canvasRef.current.width || this.x < 0 || this.y > canvasRef.current.height)
-                return true;
-
-        }
+		checkGone() {
+			if (this.x > canvasRef.current.width + 10) return true;
+		}
 	}
 
 	const canvasSize = () => {
-		canvasRef.current.width = window.innerWidth;
-		canvasRef.current.height = window.innerHeight;
+		const parent = document.getElementById("experienceContainer");
+		canvasRef.current.width = parent.offsetWidth;
+		canvasRef.current.height = parent.offsetHeight;
 	};
 
 	useEffect(() => {
 		canvasRef.current = document.getElementById("testCanvas");
 		ctxRef.current = canvasRef.current.getContext("2d");
-        ctxRef.current.fillStyle = 'rgb(25, 31, 25)';
-		canvasSize();
 		window.addEventListener("resize", canvasSize);
-		canvasRef.current.addEventListener("mousemove", getMouse);
+		// canvasRef.current.addEventListener("mousemove", getMouse);
+		canvasSize()
+		init();
 		animate();
 		return () => {
-			window.removeEventListener("resize", canvasSize());
-			canvasRef.current.removeEventListener("mousemove", getMouse);
+			window.removeEventListener("resize", canvasSize);
+			// canvasRef.current.removeEventListener("mousemove", getMouse);
 		};
 	}, []);
 
-	const getMouse = (e) => {
-		mouse.x = e.layerX;
-		mouse.y = e.layerY;
-		// drawCircle()
+	// const getMouse = (e) => {
+	// 	mouse.x = e.layerX;
+	// 	mouse.y = e.layerY;
+	// 	// drawCircle()
+	// };
+
+	let particleArray = [];
+
+	const init = () => {
+		particleArray = [];
+		for (let i = 0; i < 300; i++) {
+			createParticle();
+		}
 	};
 
-    const particleArray = []
+	const updateParticles = () => {
+		for (let i = 0; i < particleArray.length; i++) {
+			if (particleArray[i].checkGone()) {
+				particleArray.splice(i, 1)
+				i--
+				continue
+			}
+			particleArray[i].update();
+			particleArray[i].draw();
+		}
+	};
 
-    const updateParticles = () => {
-        for (let i = 0; i < particleArray.length; i++){
-            particleArray[i].update()
-            particleArray[i].draw()
-    }
-}
+	const createParticle = () => {
+		const part = new Particle();
+		particleArray.push(part);
+	};
 
 	const animate = () => {
-		ctxRef.current.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
-        const part = new Particle()
-        particleArray.push(part)
-        updateParticles()
-        setTimeout(() => {
-            particleArray.shift()
-        }, 2000)
+		if(!document.getElementById("testCanvas"))
+			return
+		ctxRef.current.clearRect(
+			0,
+			0,
+			canvasRef.current.width,
+			canvasRef.current.height
+		);
+		updateParticles();
+		setTimeout(() => {
+			const part = new Particle()
+			part.startLeft()
+			particleArray.push(part)
+		}, 100);
+		// setTimeout(() => {
+		// 	particleArray.shift();
+		// }, 2000);
+		// ctxRef.current.arc(200, 200, 10, 0, Math.PI * 2)
+		// ctxRef.current.fill()
 		requestAnimationFrame(animate);
 	};
 

@@ -24,7 +24,6 @@ const Home = ({ location }) => {
 
 	return (
 		<div id="home" className="container home hide">
-			<Canvas />
 			<div className="centreContainer">
 				<div className="centre">
 					<div className="centreArrowText">Scroll down slowly</div>
