@@ -1,44 +1,18 @@
 import React, { useEffect } from "react";
 import Canvas from "./Canvas";
+import '../styles/Experience.css'
 
 const Experience = () => {
-	const onScroll = () => {
-		checkBoxes();
-	};
+
 
 	const checkBoxes = () => {
 		const sections = document.getElementsByClassName("expSection");
 		const showHeight = (window.innerHeight * 4) / 5;
-		const hideHeight = (window.innerHeight * 8.5) / 10;
 		for (const section of sections) {
 			const top = section.getBoundingClientRect().top;
 			if (top < showHeight) section.classList.add("slideIn");
-			else if (top > hideHeight) section.classList.remove("slideIn");
 		}
 	};
-
-	// const growLines = () => {
-	// 	const leftLine = document.getElementById("lineLeft");
-	// 	const rightLine = document.getElementById("lineRight");
-	// 	const showHeight = window.innerHeight / 2;
-	// 	const top = leftLine.getBoundingClientRect().top;
-	// 	const lineContainerBottom = document
-	// 		.getElementById("lineContainer")
-	// 		.getBoundingClientRect().bottom;
-
-	// 	if (lineContainerBottom - 30 <= showHeight) return;
-
-	// 	if (showHeight < top) {
-	// 		leftLine.style.height = `0px`;
-	// 		rightLine.style.height = `0px`;
-	// 		return;
-	// 	}
-
-	// 	// if (showHeight > top) {
-	// 	leftLine.style.height = `${showHeight - top}px`;
-	// 	rightLine.style.height = `${showHeight - top}px`;
-	// 	// }
-	// };
 
 	useEffect(() => {
 		document.addEventListener('scroll', checkBoxes)

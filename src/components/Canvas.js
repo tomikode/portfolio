@@ -1,13 +1,8 @@
-import React, { useEffect, useLayoutEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 
 const Canvas = () => {
 	const canvasRef = useRef(null);
 	const ctxRef = useRef(null);
-
-	const mouse = {
-		x: undefined,
-		y: undefined,
-	};
 
 	class Particle {
 		constructor() {

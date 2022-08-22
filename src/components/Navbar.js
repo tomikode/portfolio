@@ -24,9 +24,12 @@ const Navbar = ({ location }) => {
 
 
 	useEffect(() => {
+		const bar = document.getElementById("progress")
+		bar.classList.add("hideProgress")
 		setTimeout(() => {
-			window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
-		}, 300)		
+			window.scrollTo(0, 0)
+			bar.classList.remove("hideProgress")
+		}, 300)
 	}, [location.key])
 
 	useEffect(() => {
@@ -35,7 +38,11 @@ const Navbar = ({ location }) => {
 		setTimeout(() => {
 			navbar.classList.remove("hide")
 		}, 1300)
+		window.addEventListener("beforeunload", () => {
+			window.scrollTo(0, 0)
+		})
 	}, [])
+
 
 	return (
 		<div id="navbar" className="navbar hide">
