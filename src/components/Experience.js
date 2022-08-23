@@ -4,19 +4,23 @@ import '../styles/Experience.css'
 
 const Experience = () => {
 
-
 	const checkBoxes = () => {
 		const sections = document.getElementsByClassName("expSection");
 		const showHeight = (window.innerHeight * 4) / 5;
+		let slideNumber = 0
 		for (const section of sections) {
 			const top = section.getBoundingClientRect().top;
-			if (top < showHeight) section.classList.add("slideIn");
+			if (top < showHeight) {
+				section.classList.add("slideIn");
+				slideNumber++;
+			}
 		}
+		if (slideNumber === 3)
+			document.removeEventListener('scroll', checkBoxes)
 	};
 
 	useEffect(() => {
 		document.addEventListener('scroll', checkBoxes)
-
 		return () => {
 			document.removeEventListener('scroll', checkBoxes)
 		}
@@ -39,6 +43,7 @@ const Experience = () => {
 							<img
 								className="profilePic"
 								src="profile pic zoom.jpg"
+								alt="Tomi"
 							/>
 						</div>
 					</div>

@@ -21,10 +21,6 @@ const DesktopMenu = ({ location }) => {
 		}
 	}, [location]);
 
-	const resetScroll = () => {
-		window.scrollTo(0, 0);
-	};
-
 	return (
 		<div className="desktopMenu" id="desktopMenu">
 			<ul>
@@ -40,6 +36,7 @@ const DesktopMenu = ({ location }) => {
 					className="desktopLink linkedInLink"
 					href="https://www.linkedin.com/in/tomipiisila/"
 					target="_blank"
+					rel="noreferrer"
 				>
 					<Linkedin />
 					LinkedIn
@@ -48,6 +45,7 @@ const DesktopMenu = ({ location }) => {
 					className="desktopLink gitHubLink"
 					href="https://github.com/tomikode"
 					target="_blank"
+					rel="noreferrer"
 				>
 					<Github />
 					GitHub

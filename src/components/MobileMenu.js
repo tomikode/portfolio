@@ -70,6 +70,7 @@ const MobileMenu = ({ location }) => {
 						className="mobileLink linkedInLink"
 						href="https://www.linkedin.com/in/tomipiisila/"
 						target="_blank"
+						rel="noreferrer"
 					>
 						<Linkedin />
 						LinkedIn
@@ -78,6 +79,7 @@ const MobileMenu = ({ location }) => {
 						className="mobileLink gitHubLink"
 						href="https://github.com/tomikode"
 						target="_blank"
+						rel="noreferrer"
 					>
 						<Github />
 						GitHub

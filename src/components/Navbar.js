@@ -48,7 +48,7 @@ const Navbar = ({ location }) => {
 		<div id="navbar" className="navbar hide">
 			<div id="progress" className="progress" />
 			<div className="navbarFlex">
-				<img src="tp.png" className="logo" />
+				<img src="tp.png" className="logo" alt="TP Logo" />
 				<MobileMenu location={location} />
 				<DesktopMenu location={location} />		
 			</div>

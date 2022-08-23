@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import "../styles/Home.css";
 import Arrow from "./Arrow.js";
-import Canvas from "./Canvas";
+import ContactBottom from "./ContactBottom";
 import Experience from "./Experience";
 import QuickTypePreview from "./QuickTypePreview";
 import Typing from "./Typing";
@@ -37,6 +37,7 @@ const Home = ({ location }) => {
 			<Typing />
 			<Experience />
 			<QuickTypePreview />
+			<ContactBottom />
 		</div>
 	);
 };

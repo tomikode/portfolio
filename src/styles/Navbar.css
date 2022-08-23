@@ -19,10 +19,7 @@
   .navbar {
     z-index: 1;
     position: fixed;
-    width: 100.1%;
-    left: 50%;
-    top: 0;
-    transform: translateX(-50%);
+    width: 100%;
     border-bottom: 1px solid rgb(200, 200, 200);
     background-color: rgb(25, 31, 25);
     transition: visibility 0.3s ease, opacity 0.3s ease;
