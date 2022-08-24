@@ -1,13 +1,12 @@
 import React, { useEffect } from "react";
 import Canvas from "./Canvas";
-import '../styles/Experience.css'
+import "../styles/Experience.css";
 
 const Experience = () => {
-
 	const checkBoxes = () => {
 		const sections = document.getElementsByClassName("expSection");
 		const showHeight = (window.innerHeight * 4) / 5;
-		let slideNumber = 0
+		let slideNumber = 0;
 		for (const section of sections) {
 			const top = section.getBoundingClientRect().top;
 			if (top < showHeight) {
@@ -15,17 +14,16 @@ const Experience = () => {
 				slideNumber++;
 			}
 		}
-		if (slideNumber === 3)
-			document.removeEventListener('scroll', checkBoxes)
+		if (slideNumber === 4)
+			document.removeEventListener("scroll", checkBoxes);
 	};
 
 	useEffect(() => {
-		document.addEventListener('scroll', checkBoxes)
+		document.addEventListener("scroll", checkBoxes);
 		return () => {
-			document.removeEventListener('scroll', checkBoxes)
-		}
-	}, [])
-
+			document.removeEventListener("scroll", checkBoxes);
+		};
+	}, []);
 
 	return (
 		<div id="experienceContainer" className="centreContainer">
@@ -39,7 +37,8 @@ const Experience = () => {
 							<br />
 							My name is Tomi Piisila
 							<br />
-							I am 3rd year university student studying at UTS.
+							I am 3rd year university student studying at UTS. 
+							I am a young web developer most skilled with JavaScript.
 							<img
 								className="profilePic"
 								src="profile pic zoom.jpg"
@@ -56,7 +55,7 @@ const Experience = () => {
 									<li>JavaScript</li>
 									<li>React JS</li>
 									<li>Next JS</li>
-									<li>CSS</li>
+									<li>HTML + CSS</li>
 								</ul>
 								Secondary skills:
 								<ul>
@@ -85,6 +84,21 @@ const Experience = () => {
 							Finishing Study: Nov 2023
 							<br />
 							WAM: 88.48 (GPA: 6.67)
+						</div>
+					</div>
+					<div className="expSection interests expEven">
+						<div className="expTitle">Interests</div>
+						<div className="expDesc">
+							<div>
+								My favourite interests are:
+								<ul>
+									<li>Bodybuilding</li>
+									<li>Coding</li>
+									<li>Reading</li>
+									<li>Meditation</li>
+									<li>Gaming</li>
+								</ul>
+							</div>
 						</div>
 					</div>
 				</div>

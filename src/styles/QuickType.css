@@ -20,6 +20,10 @@
     transform: translateX(0);
 }
 
+.projectDesc {
+    margin-bottom: 30px;
+}
+
 .projectText {
     padding: 15px;
     text-align: center;

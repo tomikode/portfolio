@@ -41,7 +41,7 @@ const QuickTypePreview = () => {
 			<div id="quicktypeContainer">
 				<div className="projectText">
 					<h1>Project Example</h1>
-					<p>
+					<p className="projectDesc">
 						QuickType was a project aimed at creating a typing test
 						web application that can be used to measure the speed of
 						one's typing or simply practice. Test it out here! Or

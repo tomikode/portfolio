@@ -2,25 +2,41 @@ import React, { useEffect } from "react";
 import "../styles/SectionArrow.css";
 
 const SectionArrow = () => {
+
+	const checkGrow = () => {
+		const triangle = document.getElementById("triangle")
+		const showHeight = (window.innerHeight * 3) / 5;
+		if (triangle.getBoundingClientRect().top < showHeight){
+			triangle.style.height = "200px";
+			document.removeEventListener("scroll", checkGrow)
+		}
+	}
+
 	useEffect(() => {
-		document.addEventListener("scroll", (e) => {
-			// const left = document.getElementById("leftTriangle")
-            // const right = document.getElementById("rightTriangle")
-			// const showHeight = (window.innerHeight * 4) / 5;
-            // console.log('dafuq')
-			// if (left.getBoundingClientRect().top < showHeight){
-            //     console.log('yes')
-            //     left.classList.add("showLeft")
-            //     right.classList.add("showRight")
-            // }
-		});
+		document.addEventListener("scroll", checkGrow);
+		return () => {
+			document.removeEventListener("scroll", checkGrow)
+		}
 	}, []);
 
 	return (
-		<>
-			<div id="leftTriangle" className="left" />
-			<div id="rightTriangle" className="right" />
-		</>
+		<div className="triangleBackground">
+			<svg
+				viewBox="0 0 509 254"
+				xmlns="http://www.w3.org/2000/svg"
+				id="triangle"
+				preserveAspectRatio="none"
+				className="triangle"
+			>
+				<rect
+					x="254.558"
+					y="-255"
+					width="360"
+					height="360"
+					transform="rotate(45 255 -255)"
+				/>
+			</svg>
+		</div>
 	);
 };
 
