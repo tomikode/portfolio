@@ -1,6 +1,7 @@
+import { configure } from "@testing-library/react";
 import React, { useEffect, useRef } from "react";
 
-const Canvas = () => {
+const BottomCanvas = () => {
 	const canvasRef = useRef(null);
 	const ctxRef = useRef(null);
 
@@ -28,7 +29,7 @@ const Canvas = () => {
 
 		draw() {
 			ctxRef.current.globalAlpha = this.opacity;
-			ctxRef.current.fillStyle = `rgb(25, 31, 25)`;
+			ctxRef.current.fillStyle = `white`;
 			ctxRef.current.beginPath();
 			ctxRef.current.arc(this.x, this.y, this.size, 0, Math.PI * 2);
 			ctxRef.current.fill();
@@ -40,13 +41,14 @@ const Canvas = () => {
 	}
 
 	const canvasSize = () => {
-		const parent = document.getElementById("experienceContainer");
-		canvasRef.current.width = parent.offsetWidth;
-		canvasRef.current.height = parent.offsetHeight;
+        const canvasSide = document.getElementsByClassName("canvasSide")[0]
+		canvasRef.current.width = canvasSide.clientWidth;
+		canvasRef.current.height = canvasSide.clientHeight;
+        console.log('stuff')
 	};
 
 	useEffect(() => {
-		canvasRef.current = document.getElementById("testCanvas");
+		canvasRef.current = document.getElementById("bottomCanvas");
 		ctxRef.current = canvasRef.current.getContext("2d");
 		window.addEventListener("resize", canvasSize);
 		canvasSize()
@@ -84,7 +86,7 @@ const Canvas = () => {
 	};
 
 	const animate = () => {
-		if(!document.getElementById("testCanvas"))
+		if(!document.getElementById("bottomCanvas"))
 			return
 		ctxRef.current.clearRect(
 			0,
@@ -101,7 +103,7 @@ const Canvas = () => {
 		requestAnimationFrame(animate);
 	};
 
-	return <canvas id="testCanvas" />;
+	return <canvas id="bottomCanvas" />;
 };
 
-export default Canvas;
+export default BottomCanvas;

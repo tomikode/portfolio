@@ -38,7 +38,7 @@ const DesktopMenu = ({ location }) => {
 					target="_blank"
 					rel="noreferrer"
 				>
-					<Linkedin />
+					<Linkedin className="linkedIcon" />
 					LinkedIn
 				</a>
 				<a
@@ -47,7 +47,7 @@ const DesktopMenu = ({ location }) => {
 					target="_blank"
 					rel="noreferrer"
 				>
-					<Github />
+					<Github className="linkedIcon" />
 					GitHub
 				</a>
 			</ul>

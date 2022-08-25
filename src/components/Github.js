@@ -1,9 +1,11 @@
 import React from "react";
+import '../styles/Navbar.css';
 
-const Github = () => {
+
+const Github = ({ className }) => {
 	return (
 		<svg
-			className="linkedIcon"
+			className={className}
 			xmlns="http://www.w3.org/2000/svg"
 			viewBox="0 0 16 16"
 		>

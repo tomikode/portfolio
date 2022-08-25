@@ -38,7 +38,7 @@ const Experience = () => {
 							My name is Tomi Piisila
 							<br />
 							I am 3rd year university student studying at UTS. 
-							I am a young web developer most skilled with JavaScript.
+							I am a young front-end web developer most skilled with JavaScript.
 							<img
 								className="profilePic"
 								src="profile pic zoom.jpg"

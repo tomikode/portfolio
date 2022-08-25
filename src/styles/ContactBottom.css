@@ -1,5 +1,5 @@
 #contactBottomContainer {
-    height: 1000px;
+    height: 100vh;
     background-color: rgb(0, 200, 200);
     display: flex;
     align-items: center;
@@ -8,12 +8,13 @@
 
 .contactBottomForm {
     background-color: rgb(25, 31, 25);
-    width: 800px;
-    height: 600px;
+    width: 90%;
+    max-width: 600px;
     box-shadow: 10px 10px black;
     text-align: center;
     color: white;
     display: flex;
+    flex-direction: column;
 }
 
 .formTitle {
@@ -38,53 +39,50 @@
 }
 
 .canvasSide {
-    width: 50%;
-    background-color: blue;
-    height: 100%;
+    border: 1px solid white;
 }
 
-.formSide {
-    width: 50%;
-}
-
-form {
-    width: 70%;
-    margin: 40px auto;
-    text-align: left;
-}
-
-.inputGroup {
-    position: relative;
-    width: 100%;
-    height: 60px;
-}
-
-.inputGroup label {
-    display: block;
-    position: absolute;
-}
-
-.inputGroup input {
+#bottomCanvas {
+    height: 200px;
     width: 100%;
 }
 
-.inputGroup input {
-    position: absolute;
-    font-family: 'Roboto Mono', monospace;
-    background-color: rgba(0, 0, 0, 0);
-    border: none;
-    border-bottom: 2px solid rgb(104, 104, 104);
-    caret-color: white;
-    padding: 5px;
-    height: 20px;
-    font-size: medium;
-    color: white;
+.descSide {
+    padding: 0 20px;
 }
 
-.inputGroup input:focus + label {
-    transform: translateY(-20px);
+.iconRow {
+    padding: 20px;
 }
 
-.inputGroup input:focus {
-    outline-width: 0;
+.rowIcon {
+    width: 36px;
+    height: 36px;
+    padding: 15px;
+    background-color: rgb(37, 46, 37);
+    margin: 0 10px;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    opacity: 0;
+    transform: translateY(-10%);
+}
+
+.showRowIcon {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.rowIcon path {
+    fill: white;
+    transition: fill 0.2s ease;
+}
+
+.rowIcon:hover {
+    cursor: pointer;
+    transform: rotate(10deg);
+    /* transform: scale(90%, 90%); */
+}
+
+.rowIcon:hover path {
+    fill:rgb(0, 200, 200);
+    transform-origin: center;
 }

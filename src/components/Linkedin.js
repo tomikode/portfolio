@@ -1,9 +1,10 @@
 import React from "react";
+import '../styles/Navbar.css';
 
-const Linkedin = () => {
+const Linkedin = ({ className }) => {
 	return (
 		<svg
-			className="linkedIcon"
+			className={className}
 			xmlns="http://www.w3.org/2000/svg"
 			width="24"
 			height="24"
