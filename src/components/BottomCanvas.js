@@ -1,4 +1,3 @@
-import { configure } from "@testing-library/react";
 import React, { useEffect, useRef } from "react";
 
 const BottomCanvas = () => {
@@ -12,13 +11,13 @@ const BottomCanvas = () => {
 			this.opacity = Math.random();
 			this.size = Math.random() * 5 + 1;
 			this.growth = Math.random() * 0.001 - 0.0005;
-			this.speedX = Math.random() * 0.3;
-			this.speedY = Math.random() * 0.1 - 0.05;
+			this.speedX = Math.random() * 0.1 - 0.05
+			this.speedY = -Math.random() * 0.3;
 		}
 
-		startLeft() {
-			this.x = -10;
-			this.y = Math.random() * canvasRef.current.height;
+		startBottom() {
+			this.x = Math.random() * canvasRef.current.width;
+			this.y = canvasRef.current.height + 10;
 		}
 
 		update() {
@@ -29,7 +28,7 @@ const BottomCanvas = () => {
 
 		draw() {
 			ctxRef.current.globalAlpha = this.opacity;
-			ctxRef.current.fillStyle = `white`;
+			ctxRef.current.fillStyle = `rgb(0, 200, 200)`;
 			ctxRef.current.beginPath();
 			ctxRef.current.arc(this.x, this.y, this.size, 0, Math.PI * 2);
 			ctxRef.current.fill();
@@ -44,7 +43,6 @@ const BottomCanvas = () => {
         const canvasSide = document.getElementsByClassName("canvasSide")[0]
 		canvasRef.current.width = canvasSide.clientWidth;
 		canvasRef.current.height = canvasSide.clientHeight;
-        console.log('stuff')
 	};
 
 	useEffect(() => {
@@ -97,7 +95,7 @@ const BottomCanvas = () => {
 		updateParticles();
 		setTimeout(() => {
 			const part = new Particle()
-			part.startLeft()
+			part.startBottom()
 			particleArray.push(part)
 		}, 100);
 		requestAnimationFrame(animate);

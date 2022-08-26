@@ -28,12 +28,6 @@ const Home = ({ location }) => {
 
 	return (
 		<div id="home" className="container home hide">
-			<div className="centreContainer">
-				<div className="centre">
-					<div className="centreArrowText"></div>
-					<Arrow />
-				</div>
-			</div>
 			<Typing />
 			<Experience />
 			<QuickTypePreview />

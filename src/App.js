@@ -4,6 +4,7 @@ import Home from "./components/Home";
 import Contact from "./components/Contact";
 import TransitionLogo from "./components/TransitionLogo";
 import { useEffect, useState } from "react";
+import Footer from "./components/Footer";
 
 function App() {
 	const location = useLocation();
@@ -34,6 +35,7 @@ function App() {
 			<TransitionLogo location={location} />
 			<Navbar location={location} />
 			{getPage()}
+			<Footer />
 		</div>
 	);
 }

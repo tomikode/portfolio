@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "../styles/Typing.css";
+import Arrow from "./Arrow";
 import Canvas from "./Canvas";
 
 const Typing = () => {
@@ -74,6 +75,7 @@ const Typing = () => {
 					</div>
 				</div>
 			</div>
+			<Arrow />
 		</div>
 	);
 };

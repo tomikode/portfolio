@@ -1,10 +1,15 @@
 #quicktypeContainer {
+    color: white;
+    height: 150vh;
+    background-color: rgb(25, 31, 25);
+}
+
+.quicktypeFlex {
+    padding: 15px;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content:space-around;
-    color: white;
-    padding: 15px;
-    height: 150vh;
 }
 
 .quicktype {
@@ -66,7 +71,7 @@
 }
 
 @media only screen and (max-width: 620px){
-    #quicktypeContainer {
+    .quicktypeFlex {
         flex-direction: column;
         justify-content: center;
     }

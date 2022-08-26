@@ -39,23 +39,28 @@ const QuickTypePreview = () => {
 	return (
 		<>
 			<div id="quicktypeContainer">
-				<div className="projectText">
-					<h1>Project Example</h1>
-					<p className="projectDesc">
-						QuickType was a project aimed at creating a typing test
-						web application that can be used to measure the speed of
-						one's typing or simply practice. Test it out here! Or
-						click the button below to go directly to the site.
-					</p>
-					<button className="button" onClick={openQt}>
-						<p>QuickType</p>
-						<ExternalLinkIcon id="qtLink" />
-					</button>
+				<div className="maxWidthContainer">
+					<div className="quicktypeFlex">
+						<div className="projectText">
+							<h1>Project Example</h1>
+							<p className="projectDesc">
+								QuickType was a project aimed at creating a
+								typing test web application that can be used to
+								measure the speed of one's typing or simply
+								practice. Test it out here! Or click the button
+								below to go directly to the site.
+							</p>
+							<button className="button" onClick={openQt}>
+								<p>QuickType</p>
+								<ExternalLinkIcon id="qtLink" />
+							</button>
+						</div>
+						<embed
+							className="quicktype"
+							src="https://quicktype.vercel.app/"
+						/>
+					</div>
 				</div>
-				<embed
-					className="quicktype"
-					src="https://quicktype.vercel.app/"
-				/>
 			</div>
 			<SectionArrow />
 		</>

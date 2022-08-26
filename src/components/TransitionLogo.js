@@ -21,7 +21,7 @@ const TransitionLogo = ({ location }) => {
 
   return (
     <div id='transferScreen' className='transferLogoScreen'>
-        <img id='transferLogo' className='transferLogo' src='tp.png' />
+        <img id='transferLogo' className='transferLogo' src='tplogo.png' />
     </div>
   )
 }

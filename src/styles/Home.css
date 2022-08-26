@@ -3,16 +3,3 @@
     height: 100vh;
     display: flex;
 }
-
-.centreArrowText {
-    color: white;
-    margin-bottom: 30px;
-    font-size: small;
-}
-
-
-#arrow {
-    width: 200px;
-    fill: white;
-}
-

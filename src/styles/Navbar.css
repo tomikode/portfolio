@@ -1,9 +1,8 @@
-.logo {
+.tplogo {
     margin: 0;
-    width: 40px;
-    height: 40px;
+    height: 30px;
     user-select: none;
-    padding: 15px;
+    padding: 20px 15px;
   }
   
   .logo:hover {

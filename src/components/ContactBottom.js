@@ -9,7 +9,7 @@ const ContactBottom = () => {
 	const checkShows = () => {
 		const underline = document.getElementById("underline");
 		const icons = document.getElementsByClassName("rowIcon")
-		const showHeight = (window.innerHeight * 3) / 5;
+		const showHeight = (window.innerHeight * 4) / 5;
 		if (underline.getBoundingClientRect().top < showHeight) {
 			underline.classList.add("underlineGrow");
 			for (let i = 0; i < icons.length; i++){
