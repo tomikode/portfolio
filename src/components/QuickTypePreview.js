@@ -4,12 +4,10 @@ import { ExternalLinkIcon } from "@heroicons/react/solid";
 import SectionArrow from "./SectionArrow";
 
 const QuickTypePreview = () => {
-	const onScroll = (e) => {
+	const onScroll = () => {
 		const qt = document.getElementsByClassName("quicktype")[0];
 		const qtText = document.getElementsByClassName("projectText")[0];
 		const showHeight = (window.innerHeight * 4) / 5;
-		if (qt.getBoundingClientRect().top < showHeight) {
-		}
 		if (qtText.getBoundingClientRect().top < showHeight) {
 			qt.classList.add("showType");
 			const children = qtText.children;

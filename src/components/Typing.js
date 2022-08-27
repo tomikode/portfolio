@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "../styles/Typing.css";
 import Arrow from "./Arrow";
-import Canvas from "./Canvas";
 
 const Typing = () => {
 	const toType = ["tomi piisila", "a web developer", "a uni student"];
@@ -42,7 +41,7 @@ const Typing = () => {
 				backspaceCycle();
 			}, 50);
 		} else {
-			if (phrasePos.current === 2) {
+			if (phrasePos.current === toType.length - 1) {
 				phrasePos.current = 0;
 			} else {
 				phrasePos.current++;

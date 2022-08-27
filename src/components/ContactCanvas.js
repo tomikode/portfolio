@@ -1,53 +1,67 @@
 import React, { useEffect, useRef } from "react";
 
-const BottomCanvas = () => {
+const ContactCanvas = () => {
 	const canvasRef = useRef(null);
 	const ctxRef = useRef(null);
 
+	const tilt = 400;
+
 	class Particle {
 		constructor() {
-			this.x = Math.random() * canvasRef.current.width;
-			this.y = Math.random() * canvasRef.current.height;
+			this.x1 = Math.random() * (canvasRef.current.width + tilt);
+			this.y1 = 0;
+			this.x2 = this.x1 - tilt;
+			this.y2 = canvasRef.current.height;
+			this.width = Math.random() * 6;
 			this.opacity = Math.random();
-			this.size = Math.random() * 5 + 1;
-			this.growth = Math.random() * 0.001 - 0.0005;
-			this.speedX = Math.random() * 0.1 - 0.05;
-			this.speedY = -Math.random() * 0.3;
+			this.speedX = Math.random() * 0.3 - 0.15;
 		}
 
-		startBottom() {
-			this.x = Math.random() * canvasRef.current.width;
-			this.y = canvasRef.current.height + 10;
+		startLeftOrRight() {
+			const startLeft = Math.random() * 2;
+			if (startLeft < 1) {
+				this.x1 = 0;
+				this.y1 = 0;
+				this.x2 = -tilt;
+				this.y2 = canvasRef.current.height;
+			} else {
+				this.x1 = canvasRef.current.width + tilt;
+				this.y1 = 0;
+				this.x2 = canvasRef.current.width;
+				this.y2 = canvasRef.current.height;
+			}
 		}
 
 		update() {
-			this.x += this.speedX;
-			this.y += this.speedY;
-			if (this.size + this.growth > 0) this.size += this.growth;
+			this.x1 += this.speedX;
+			this.x2 += this.speedX;
 		}
 
 		draw() {
 			ctxRef.current.globalAlpha = this.opacity;
-			ctxRef.current.fillStyle = `rgb(0, 200, 200)`;
+			ctxRef.current.strokeStyle = `rgb(0, 200, 200)`;
 			ctxRef.current.beginPath();
-			ctxRef.current.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-			ctxRef.current.fill();
+			ctxRef.current.lineWidth = this.width;
+			ctxRef.current.moveTo(this.x1, this.y1);
+			ctxRef.current.lineTo(this.x2, this.y2);
+			ctxRef.current.stroke();
 		}
 
 		checkGone() {
-			if (this.x > canvasRef.current.width + 10) return true;
-			return false;
+			if (this.x2 > canvasRef.current.width + 10) return true;
+            if (this.x1 < -10) return true;
+            return false;
 		}
 	}
 
 	const canvasSize = () => {
-		const canvasSide = document.getElementsByClassName("canvasSide")[0];
+		const canvasSide = document.getElementById("contact");
 		canvasRef.current.width = canvasSide.clientWidth;
 		canvasRef.current.height = canvasSide.clientHeight;
 	};
 
 	useEffect(() => {
-		canvasRef.current = document.getElementById("bottomCanvas");
+		canvasRef.current = document.getElementById("contactCanvas");
 		ctxRef.current = canvasRef.current.getContext("2d");
 		window.addEventListener("resize", canvasSize);
 		canvasSize();
@@ -85,7 +99,7 @@ const BottomCanvas = () => {
 	};
 
 	const animate = () => {
-		if (!document.getElementById("bottomCanvas")) return;
+		if (!document.getElementById("contactCanvas")) return;
 		ctxRef.current.clearRect(
 			0,
 			0,
@@ -95,13 +109,13 @@ const BottomCanvas = () => {
 		updateParticles();
 		setTimeout(() => {
 			const part = new Particle();
-			part.startBottom();
+			part.startLeftOrRight();
 			particleArray.push(part);
-		}, 100);
+		}, 2000);
 		requestAnimationFrame(animate);
 	};
 
-	return <canvas id="bottomCanvas" />;
+	return <canvas id="contactCanvas" />;
 };
 
-export default BottomCanvas;
+export default ContactCanvas;

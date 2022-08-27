@@ -12,22 +12,19 @@
     position: absolute;
     height: 100%;
     width: auto;
-    /* z-index: 1; */
 }
 
 .expFlexContainer {
     display: flex;
     flex-direction: column;
     height: 100%;
-    flex-grow: 1;
-    /* padding: 50px 15px; */
+    justify-content: center;
 }
 
 .expSection {
     width: 85%;
     color: white;
     background-color: rgb(25, 31, 25);
-    flex-grow: 1;
     margin: 40px;
     max-width: 600px;
     min-height: 200px;

@@ -1,0 +1,37 @@
+.iconRow {
+    padding: 20px;
+}
+
+.rowIcon {
+    width: 36px;
+    height: 36px;
+    padding: 15px;
+    background-color: rgb(37, 46, 37);
+    margin: 0 10px;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.hideRowIcon {
+    opacity: 0;
+    transform: translateY(-10%);
+}
+
+.showRowIcon {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.rowIcon path {
+    fill: white;
+    transition: fill 0.2s ease;
+}
+
+.rowIcon:hover {
+    cursor: pointer;
+    transform: rotate(10deg);
+}
+
+.rowIcon:hover path {
+    fill:rgb(0, 200, 200);
+    transform-origin: center;
+}

@@ -4,7 +4,9 @@ import '../styles/Footer.css'
 const Footer = () => {
   return (
     <div className='footer'>
-        Tomi Piisila © 2022 All Rights Reserved
+        Tomi Piisila © 2022 
+        <br />
+        All Rights Reserved
     </div>
   )
 }

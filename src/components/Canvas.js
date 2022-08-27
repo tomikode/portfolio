@@ -36,6 +36,7 @@ const Canvas = () => {
 
 		checkGone() {
 			if (this.x > canvasRef.current.width + 10) return true;
+			return false;
 		}
 	}
 
@@ -49,7 +50,7 @@ const Canvas = () => {
 		canvasRef.current = document.getElementById("testCanvas");
 		ctxRef.current = canvasRef.current.getContext("2d");
 		window.addEventListener("resize", canvasSize);
-		canvasSize()
+		canvasSize();
 		init();
 		animate();
 		return () => {
@@ -69,9 +70,9 @@ const Canvas = () => {
 	const updateParticles = () => {
 		for (let i = 0; i < particleArray.length; i++) {
 			if (particleArray[i].checkGone()) {
-				particleArray.splice(i, 1)
-				i--
-				continue
+				particleArray.splice(i, 1);
+				i--;
+				continue;
 			}
 			particleArray[i].update();
 			particleArray[i].draw();
@@ -84,8 +85,7 @@ const Canvas = () => {
 	};
 
 	const animate = () => {
-		if(!document.getElementById("testCanvas"))
-			return
+		if (!document.getElementById("testCanvas")) return;
 		ctxRef.current.clearRect(
 			0,
 			0,
@@ -94,9 +94,9 @@ const Canvas = () => {
 		);
 		updateParticles();
 		setTimeout(() => {
-			const part = new Particle()
-			part.startLeft()
-			particleArray.push(part)
+			const part = new Particle();
+			part.startLeft();
+			particleArray.push(part);
 		}, 100);
 		requestAnimationFrame(animate);
 	};

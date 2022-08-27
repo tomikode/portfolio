@@ -10,8 +10,8 @@ const DesktopMenu = ({ location }) => {
 	};
 
 	useEffect(() => {
-		const home = document.getElementsByClassName("homeLink")[1];
-		const contact = document.getElementsByClassName("contactLink")[1];
+		const home = document.querySelector(".desktopMenu .homeLink")
+		const contact = document.querySelector(".desktopMenu .contactLink");
 		if (determineClasses("/")) {
 			home.classList.add("currentLink");
 			contact.classList.remove("currentLink");

@@ -6,7 +6,7 @@
     justify-content: center;
 }
 
-.contactBottomForm {
+#contactBottomForm {
     background-color: rgb(25, 31, 25);
     width: 90%;
     max-width: 600px;
@@ -37,10 +37,6 @@
     width: 100%;
 }
 
-.canvasSide {
-    /* border: 1px solid white; */
-}
-
 #bottomCanvas {
     height: 200px;
     width: 100%;
@@ -48,40 +44,4 @@
 
 .descSide {
     padding: 20px;
-}
-
-.iconRow {
-    padding: 20px;
-}
-
-.rowIcon {
-    width: 36px;
-    height: 36px;
-    padding: 15px;
-    background-color: rgb(37, 46, 37);
-    margin: 0 10px;
-    transition: transform 0.5s ease, opacity 0.5s ease;
-    opacity: 0;
-    transform: translateY(-10%);
-}
-
-.showRowIcon {
-    transform: translateY(0);
-    opacity: 1;
-}
-
-.rowIcon path {
-    fill: white;
-    transition: fill 0.2s ease;
-}
-
-.rowIcon:hover {
-    cursor: pointer;
-    transform: rotate(10deg);
-    /* transform: scale(90%, 90%); */
-}
-
-.rowIcon:hover path {
-    fill:rgb(0, 200, 200);
-    transform-origin: center;
 }

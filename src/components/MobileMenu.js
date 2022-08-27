@@ -15,8 +15,8 @@ const MobileMenu = ({ location }) => {
 	};
 
 	useEffect(() => {
-		const home = document.getElementsByClassName("homeLink")[0];
-		const contact = document.getElementsByClassName("contactLink")[0];
+		const home = document.querySelector(".mobileMenu .homeLink");
+		const contact = document.querySelector(".mobileMenu .contactLink");
 		if (determineClasses("/")) {
 			home.classList.add("currentLink");
 			contact.classList.remove("currentLink");

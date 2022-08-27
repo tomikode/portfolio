@@ -1,9 +1,7 @@
-import { MailIcon } from "@heroicons/react/solid";
 import React, { useEffect } from "react";
 import "../styles/ContactBottom.css";
 import BottomCanvas from "./BottomCanvas";
-import Github from "./Github";
-import Linkedin from "./Linkedin";
+import IconRow from "./IconRow";
 
 const ContactBottom = () => {
 	const checkShows = () => {
@@ -32,13 +30,9 @@ const ContactBottom = () => {
 		};
 	});
 
-	const openMail = () => {
-		window.open(`mailto:tomi.piisila@gmail.com?subject=Message to Tomi`);
-	}
-
 	return (
 		<div id="contactBottomContainer">
-			<div id="contactBottomForm" className="contactBottomForm">
+			<div id="contactBottomForm">
 				<div className="canvasSide">
 					<BottomCanvas />
 				</div>
@@ -54,25 +48,7 @@ const ContactBottom = () => {
 							out my GitHub to see the projects I have worked on.
 						</p>
 					</div>
-					<div className="iconRow" id="iconRow">
-						<MailIcon onClick={openMail} className="rowIcon" />
-						<a
-							className=""
-							href="https://www.linkedin.com/in/tomipiisila/"
-							target="_blank"
-							rel="noreferrer"
-						>
-						<Linkedin className="rowIcon" />
-						</a>
-						<a
-							className=""
-							href="https://github.com/tomikode"
-							target="_blank"
-							rel="noreferrer"
-						>
-							<Github className="rowIcon" />
-						</a>
-					</div>
+					<IconRow show={false} />
 				</div>
 			</div>
 		</div>
