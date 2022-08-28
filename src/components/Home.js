@@ -17,7 +17,7 @@ const Home = ({ location }) => {
 		} else {
 			home.classList = "container home hide"
 		}
-	}, [location.pathname])
+	}, [location.key])
 
 	return (
 		<div id="home" className="container home hide">

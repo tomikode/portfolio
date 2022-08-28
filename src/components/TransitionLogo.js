@@ -14,7 +14,7 @@ const TransitionLogo = ({ location }) => {
 			transferScreen.classList = "transferLogoScreen";
 			transferLogo.classList = "transferLogo";
 		}, 1800);
-	}, [location.pathname]);
+	}, [location.key]);
 
 	return (
 		<div id="transferScreen" className="transferLogoScreen">

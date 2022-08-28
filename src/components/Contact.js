@@ -14,12 +14,31 @@ const Contact = ({ location }) => {
 		} else {
 			contact.classList = "container contact hide";
 		}
-	}, [location.pathname]);
+	}, [location.key]);
+
+	useEffect(() => {
+		setTimeout(() => {
+			const underline = document.getElementById("underline");
+			const icons = document.getElementsByClassName("rowIcon");
+			underline.classList.add("underlineGrow");
+			for (let i = 0; i < icons.length; i++) {
+				if (i === 0) icons[i].classList.add("showRowIcon");
+				else
+					setTimeout(() => {
+						icons[i].classList.add("showRowIcon");
+					}, 500 * i);
+			}
+		}, 2000);
+	}, []);
 
 	return (
 		<div id="contact" className="container contact hide">
+			<ContactCanvas />
 			<div className="contactBox">
-				<h1>Get In Touch</h1>
+				<div className="contactTitle">
+					<h1>Get In Touch</h1>
+					<div id="underline" className="underline" />
+				</div>
 				<div className="textAndIcons">
 					<div>
 						<p>
@@ -28,10 +47,9 @@ const Contact = ({ location }) => {
 							out my GitHub to see the projects I have worked on.
 						</p>
 					</div>
-					<IconRow show={true} />
+					<IconRow show={false} />
 				</div>
 			</div>
-			<ContactCanvas />
 		</div>
 	);
 };

@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import MobileMenu from "./MobileMenu";
 import DesktopMenu from "./DesktopMenu";
 import '../styles/Navbar.css';
+import { Link } from "react-router-dom";
+
 
 const Navbar = ({ location }) => {
 
@@ -48,7 +50,7 @@ const Navbar = ({ location }) => {
 		<div id="navbar" className="navbar hide">
 			<div id="progress" className="progress" />
 			<div className="navbarFlex">
-				<img src="tplogo.png" className="tplogo" alt="TP Logo" />
+				<Link to="/"><img src="tplogo.png" className="tplogo" alt="TP Logo" /></Link>
 				<MobileMenu location={location} />
 				<DesktopMenu location={location} />		
 			</div>

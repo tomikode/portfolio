@@ -15,9 +15,29 @@
     color: white;
     text-align: center;
     padding: 15px;
-    z-index: 1;
+    z-index: 0;
 }
 
 #contactCanvas {
     position: absolute;
+}
+
+.underline {
+    width: 0;
+    height: 5px;
+    margin: auto;
+    background-color: white;
+    transition: width 1s ease;
+}
+
+.underlineGrow {
+    width: 100%;
+}
+
+.contactTitle {
+    display: inline-block;
+}
+
+.contactTitle h1 {
+    margin: 10px;
 }
