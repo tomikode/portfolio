@@ -92,7 +92,8 @@ const Experience = () => {
 							<div>
 								My favourite interests are:
 								<ul>
-									<li>Bodybuilding</li>
+									<li>Strength Training</li>
+									<li>Rock Climbing</li>
 									<li>Coding</li>
 									<li>Reading</li>
 									<li>Meditation</li>
