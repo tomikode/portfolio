@@ -3,7 +3,7 @@ import "../styles/Typing.css";
 import Arrow from "./Arrow";
 
 const Typing = () => {
-	const toType = ["tomi piisila", "a web developer", "a uni student"];
+	const toType = ["tomi piisila", "a web developer"];
 	const typedPos = useRef(0);
 	const phrasePos = useRef(0);
 
