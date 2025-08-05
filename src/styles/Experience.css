@@ -1,7 +1,7 @@
 #experienceContainer {
     background-color: rgb(0, 200, 200);
     width: 100%;
-    height: 1800px;
+    height: 2400px;
     position: relative;
     display: inline-block;
     overflow-x: hidden;
@@ -73,37 +73,38 @@
     list-style-type: none;
 }
 
-.about, .uniExp, .languageExp, .interests {
+.about,
+.uniExp,
+.languageExp,
+.interests {
     margin: 40px auto;
 }
 
 .profilePic {
     width: 40vw;
-    max-width: 120px;
+    max-width: 180px;
     height: auto;
     margin: 15px;
     padding: 25px 0;
     border-top: 1px solid white;
     border-bottom: 1px solid white;
-    filter: grayscale(100%);
 }
 
-@media only screen and (max-width: 450px){
+@media only screen and (max-width: 450px) {
     .about .expDesc {
         flex-direction: column;
     }
 }
 
-@media only screen and (min-width: 992px){
-
-    .about, .uniExp {
+@media only screen and (min-width: 992px) {
+    .about,
+    .uniExp {
         margin: 40px;
     }
 
-    .languageExp, .interests {
+    .languageExp,
+    .interests {
         margin: 40px;
         margin-left: auto;
     }
-
-
 }

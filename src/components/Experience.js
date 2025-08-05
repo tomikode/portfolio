@@ -36,12 +36,12 @@ const Experience = () => {
                             <div>
                                 Hi there!
                                 <br />
-                                My name is Tomi Piisila and I am a web
-                                developer.
+                                My name is Tomi Piisila and I am a
+                                Finnish/Australian web developer.
                             </div>
                             <img
                                 className="profilePic"
-                                src="profile pic zoom.jpg"
+                                src="headshot.jpg"
                                 alt="Tomi"
                             />
                         </div>
@@ -57,6 +57,7 @@ const Experience = () => {
                                     <li>HTML</li>
                                     <li>CSS</li>
                                     <li>.NET</li>
+                                    <li>Accessibility practices</li>
                                 </ul>
                             </div>
                         </div>
@@ -69,21 +70,33 @@ const Experience = () => {
                                 (Dec 2022 - Present)
                                 <ul>
                                     <li>
-                                        Develop new features and enchancements
+                                        Plan, discuss and implement solutions to
+                                        defects, enhancements or new features to
+                                        an enterprise website application
                                     </li>
-                                    <li>Diagnose and fix bugs</li>
+                                    <br />
+                                    <li>
+                                        Review peer’s code to spot potential
+                                        bugs and provide suggestions to enhance
+                                        code quality and stay adhering to best
+                                        practices
+                                    </li>
+                                    <br />
                                     <li>
                                         Write automated tests and conduct manual
                                         testing on own and peer's code
                                     </li>
+                                    <br />
                                     <li>
-                                        Conduct code review on peer's and own
-                                        code
+                                        Investigate potential bugs found by
+                                        consultants and answer questions they
+                                        may have
                                     </li>
+                                    <br />
                                     <li>
-                                        Collaborate with other employees of the
-                                        company and assisting to any their
-                                        issues
+                                        Collaborating with managers, UX/UI
+                                        designers and other developers on a
+                                        large scale web application
                                     </li>
                                 </ul>
                             </div>

@@ -1,8 +1,7 @@
 .triangle {
     width: 100%;
     fill: rgb(25, 31, 25);
-    height: 0;
-    transition: height 1s ease;
+    height: 200px;
 }
 
 .triangleBackground {
