@@ -70,33 +70,47 @@ const Experience = () => {
                                 (Dec 2022 - Present)
                                 <ul>
                                     <li>
-                                        Plan, discuss and implement solutions to
-                                        defects, enhancements or new features to
-                                        an enterprise website application
+                                        Implemented dynamic updating of a tree
+                                        folder structure, showing other user’s
+                                        changes in real time without needing to
+                                        refresh
                                     </li>
                                     <br />
                                     <li>
-                                        Review peer’s code to spot potential
-                                        bugs and provide suggestions to enhance
-                                        code quality and stay adhering to best
-                                        practices
+                                        Created a highly configurable React API
+                                        for a movable and resizable dialog to
+                                        significantly boost developer
+                                        productivity
                                     </li>
                                     <br />
                                     <li>
-                                        Write automated tests and conduct manual
-                                        testing on own and peer's code
+                                        Code reviewed a complete frontend
+                                        rewrite of a highly customisable tabling
+                                        feature (over 150 hours worth of
+                                        development work)
                                     </li>
                                     <br />
                                     <li>
-                                        Investigate potential bugs found by
-                                        consultants and answer questions they
-                                        may have
+                                        Successfully debugged and solved a rare
+                                        race condition that was blocking users
+                                        from editing their project for 30
+                                        minutes
                                     </li>
                                     <br />
                                     <li>
-                                        Collaborating with managers, UX/UI
-                                        designers and other developers on a
-                                        large scale web application
+                                        Implemented a highly requested (by at
+                                        least 5 clients) custom content portlet,
+                                        which allowed users to write text, HTML,
+                                        Markdown and upload images
+                                    </li>
+                                    <li>
+                                        Played a major role in boosting our web
+                                        app’s WCAG compliancy to A/AA levels
+                                    </li>
+                                    <li>
+                                        Reduced computation time by 92% at best
+                                        on users sorting their tabular data by
+                                        implementing a backend caching solution
                                     </li>
                                 </ul>
                             </div>
