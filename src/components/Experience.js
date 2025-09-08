@@ -66,8 +66,8 @@ const Experience = () => {
                         <div className="expTitle">Experience</div>
                         <div className="expDesc">
                             <div>
-                                Junior Fullstack Developer at Avolution Software
-                                (Dec 2022 - Present)
+                                Fullstack Developer at Avolution Software (Dec
+                                2022 - Present)
                                 <ul>
                                     <li>
                                         Implemented dynamic updating of a tree
@@ -103,14 +103,22 @@ const Experience = () => {
                                         which allowed users to write text, HTML,
                                         Markdown and upload images
                                     </li>
+                                    <br />
                                     <li>
                                         Played a major role in boosting our web
                                         app’s WCAG compliancy to A/AA levels
                                     </li>
+                                    <br />
                                     <li>
                                         Reduced computation time by 92% at best
                                         on users sorting their tabular data by
                                         implementing a backend caching solution
+                                    </li>
+                                    <br />
+                                    <li>
+                                        Promoted to Full Stack Developer from
+                                        Junior Full Stack Developer in September
+                                        2025
                                     </li>
                                 </ul>
                             </div>
