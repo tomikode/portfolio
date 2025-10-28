@@ -70,49 +70,51 @@ const Experience = () => {
                                 2022 - Present)
                                 <ul>
                                     <li>
-                                        Implemented dynamic updating of a tree
-                                        folder structure, showing other user’s
-                                        changes in real time without needing to
-                                        refresh
+                                        Implemented lazy dynamic updating of a
+                                        project UI tree structure, showing other
+                                        user’s changes in real time without
+                                        needing to refresh
                                     </li>
                                     <br />
                                     <li>
-                                        Created a highly configurable React API
-                                        for a movable and resizable dialog to
-                                        significantly boost developer
-                                        productivity
+                                        Implemented a highly configurable React
+                                        API for a movable and resizable pop-up
+                                        dialog to significantly boost developer
+                                        productivity and eliminate bugs
+                                        associated with the legacy dialog
+                                    </li>
+                                    <br />
+                                    <li>
+                                        Code reviewed a project analytics
+                                        feature, requested by over 50 clients,
+                                        which allowed admin users to examine and
+                                        manage their company’s usage of the
+                                        application
+                                    </li>
+                                    <br />
+                                    <li>
+                                        Successfully debugged and solved a rare
+                                        multi-threaded race condition that was
+                                        blocking users from editing their
+                                        project for 30 minutes, by examining
+                                        logs and attempting to reproduce the
+                                        issue with the use of freezing threads
+                                    </li>
+                                    <br />
+                                    <li>
+                                        Played a major role in boosting the web
+                                        app’s WCAG compliancy to A/AA levels,
+                                        enabling our web app to be accessible to
+                                        a greater number of users
                                     </li>
                                     <br />
                                     <li>
                                         Code reviewed a complete frontend
                                         rewrite of a highly customisable tabling
-                                        feature (over 150 hours worth of
-                                        development work)
-                                    </li>
-                                    <br />
-                                    <li>
-                                        Successfully debugged and solved a rare
-                                        race condition that was blocking users
-                                        from editing their project for 30
-                                        minutes
-                                    </li>
-                                    <br />
-                                    <li>
-                                        Implemented a highly requested (by at
-                                        least 5 clients) custom content portlet,
-                                        which allowed users to write text, HTML,
-                                        Markdown and upload images
-                                    </li>
-                                    <br />
-                                    <li>
-                                        Played a major role in boosting our web
-                                        app’s WCAG compliancy to A/AA levels
-                                    </li>
-                                    <br />
-                                    <li>
-                                        Reduced computation time by 92% at best
-                                        on users sorting their tabular data by
-                                        implementing a backend caching solution
+                                        feature (over 150 hours of dev work),
+                                        reducing the company’s reliance on
+                                        legacy and difficult-to-hire
+                                        technologies
                                     </li>
                                     <br />
                                     <li>
